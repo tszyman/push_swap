@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 19:31:50 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/01 21:31:10 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,14 @@ int		is_sorted(t_stack *stack);
 int		has_dupl(t_stack *stack);
 int		is_empty(t_stack *stack);
 void	free_ssplit(char **ssplit);
+void	free_stack(t_stack *stack);
 
 //utils
 int		is_nbr(char *s);
-long	ft_atol(const char *s);
+long	ft_atol(char *s);
+
+//stack&node
+void	add_back(t_stack *stack, t_node *node);
 
 //actions
 

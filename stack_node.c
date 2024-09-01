@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   stack_node.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 18:03:53 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 21:24:19 by tomek            ###   ########.fr       */
+/*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
+/*   Updated: 2024/09/01 21:30:23 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void	throw_error(void)
+void	add_back(t_stack *stack, t_node *node)
 {
-	ft_putendl_fd("Error", 2);
+	if (stack->head == NULL)
+	{
+		stack->head = node;
+		stack->tail = node;
+	}
+	else
+	{
+		node->next = NULL;
+		node->prev = stack->tail;
+		stack->tail->next = node;
+		stack->tail = node;
+	}
+	stack->size++;
 }

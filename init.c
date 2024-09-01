@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:51:55 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 19:32:10 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/01 21:32:02 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	*get_and_split(int argc, char **argv, int *size)
 		{
 			if (!is_nbr(argv[i]) || ft_atol(argv[i]) < -2147483648
 				|| ft_atol(argv[i]) > 2147483647)
-				return (free(split), put_error(), NULL);
+				return (free(split), throw_error(), NULL);
 			split[i - 1] = ft_atoi(argv[i]);
 			i--;
 		}
@@ -113,4 +113,20 @@ t_stack	*init_and_fill(int *split, int size)
 		i++;
 	}
 	return (stack_a);
+}
+
+t_node	*init_node(int data)
+{
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+	new_node->data = data;
+	new_node->index = 0;
+	new_node->prev = NULL;
+	new_node->next = NULL;
+	return (new_node);
 }

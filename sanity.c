@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:56:17 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 19:30:08 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/01 21:27:48 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,21 @@ void	free_ssplit(char **ssplit)
 		i++;
 	}
 	free(ssplit);
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_node	*current;
+	t_node	*next_node;
+
+	if (stack == NULL)
+		return ;
+	current = stack->head;
+	while (current != NULL)
+	{
+		next_node = current->next;
+		free(current);
+		current = next_node;
+	}
+	free(stack);
 }
