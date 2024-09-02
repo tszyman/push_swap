@@ -6,7 +6,7 @@
 /*   By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:51:55 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/02 21:51:30 by tszymans         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:57:18 by tszymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ t_stack	*init_stack(void)
 	new_stack->head = NULL;
 	new_stack->tail = NULL;
 	return (new_stack);
+}
+
+t_node	*init_node(int data)
+{
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+	new_node->data = data;
+	new_node->index = 0;
+	new_node->prev = NULL;
+	new_node->next = NULL;
+	return (new_node);
 }
 
 t_stack	*init_and_fill(int *split, int size)
@@ -44,20 +60,4 @@ t_stack	*init_and_fill(int *split, int size)
 		i++;
 	}
 	return (stack_a);
-}
-
-t_node	*init_node(int data)
-{
-	t_node	*new_node;
-
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (new_node == NULL)
-	{
-		return (NULL);
-	}
-	new_node->data = data;
-	new_node->index = 0;
-	new_node->prev = NULL;
-	new_node->next = NULL;
-	return (new_node);
 }
