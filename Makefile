@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tomek <tomek@student.42.fr>                +#+  +:+       +#+         #
+#    By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 16:09:49 by tomek             #+#    #+#              #
-#    Updated: 2024/09/01 21:32:33 by tomek            ###   ########.fr        #
+#    Updated: 2024/09/02 21:50:01 by tszymans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS		= -Wall -Wextra -Werror -g
 LIBFT_DIR	= ./Libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 RM			= rm -rf
-SRCS		= push_swap.c errors.c init.c sanity.c utils.c stack_node.c #actions.c sort.c
+SRCS		= push_swap.c errors.c init.c init_utils.c sanity.c utils.c stack_node.c #actions.c sort.c
 #SRC			= $(addprefix ./src/, $(SRCS))
 SRC		= $(SRCS)
 OBJ			= $(SRC:.c=.o)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sanity.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:56:17 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 21:27:48 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/02 21:56:50 by tszymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int	has_duplicates(int *split, int size)
+int	has_dupl(int *split, int size)
 {
 	int	i;
 	int	j;

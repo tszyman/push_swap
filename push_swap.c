@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 21:33:26 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/02 21:58:28 by tszymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,25 @@ int	main(int argc, char **argv)
 {
 	int			*split;
 	int			size;
+	int			i;
 //	t_stack		*stack_a;
 //	t_stack		*stack_b;
-	int			i;
 
 	split = get_and_split(argc, argv, &size);
 	if (split == NULL)
 		return (1);
 	i = 0;
-	while (i <= size)
+	printf("Size: %d\n", size);
+	while (i < size)
 	{
 		printf("%d\n", split[i]);
 		i++;
 	}
+	if (has_dupl(split, size))
+		return (free(split), throw_error(), 1);
 	// stack_a = init_and_fill(split, size);
 	// if (stack_a == NULL)
 	// 	return (free(split), 1);
-	// if (has_duplicates(split, size))
-	// 	return (free_stack(stack_a), free(split), put_error(), 1);
 	// free(split);
 	// stack_b = init_stack();
 	// if (stack_b == NULL)
