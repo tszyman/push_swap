@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:12:26 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:06:54 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	add_back(t_stack *stack, t_node *node)
 	}
 	stack->size++;
 }
+
 t_stack	*init_and_fill(int *split, int size)
 {
 	t_stack	*stack_a;
