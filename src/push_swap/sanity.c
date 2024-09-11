@@ -6,13 +6,13 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:56:17 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:50:12 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:00:30 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int	has_duplicates(int *split, int size)
+int	has_dupl(int *split, int size)
 {
 	int	i;
 	int	j;

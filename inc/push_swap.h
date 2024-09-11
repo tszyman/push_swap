@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:46:06 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:02:01 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "./Libft/libft.h"
+# include "../libft/inc/libft.h"
+# include "../libft/inc/ft_printf.h"
 
 typedef struct s_node
 {
@@ -42,7 +43,7 @@ int		get_ssize(char **ssplit);
 
 //sanity
 int		is_sorted(t_stack *stack);
-int		has_dupl(t_stack *stack);
+int		has_dupl(int *split, int size);
 int		is_empty(t_stack *stack);
 void	free_ssplit(char **ssplit);
 void	free_stack(t_stack *stack);
