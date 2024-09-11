@@ -3,45 +3,74 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+         #
+#    By: tomek <tomek@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 16:09:49 by tomek             #+#    #+#              #
-#    Updated: 2024/09/02 21:50:01 by tszymans         ###   ########.fr        #
+#    Updated: 2024/09/11 23:45:44 by tomek            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
-CC			= clang
-CFLAGS		= -Wall -Wextra -Werror -g
-LIBFT_DIR	= ./Libft
-LIBFT		= $(LIBFT_DIR)/libft.a
-RM			= rm -rf
-SRCS		= push_swap.c errors.c init.c init_utils.c sanity.c utils.c stack_node.c #actions.c sort.c
-#SRC			= $(addprefix ./src/, $(SRCS))
-SRC		= $(SRCS)
-OBJ			= $(SRC:.c=.o)
+# Project name
+NAME			= push_swap
 
-all:	$(LIBFT) $(NAME)
+# Directories
+LIBFT			= ./libft/libft.a
+INC				= inc/
+SRC_DIR			= src/
+OBJ_DIR			= obj/
+
+# Compiler & flags
+CC				= clang
+CFLAGS			= -Wall -Wextra -Werror -I
+RM				= rm -rf
+
+# Source files
+COMMANDS_DIR	= #push_swap.c errors.c init.c sanity.c utils.c stack_node.c #actions.c sort.c
+
+PUSH_SWAP_DIR	= 	$(SRC_DIR)push_swap/push_swap.c \
+					$(SRC_DIR)push_swap/errors.c \
+					$(SRC_DIR)push_swap/init.c \
+					$(SRC_DIR)push_swap/sanity.c \
+					$(SRC_DIR)push_swap/utils.c \
+					$(SRC_DIR)push_swap/stack_node.c \
+
+# Concatenate all source files
+SRCS 			= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
+
+# Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
+OBJ 			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+
+# Build libft if not already biult
 
 $(LIBFT):
-	@make -s -C $(LIBFT_DIR)
+				@make -C ./libft
 
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L./$(LIBFT_DIR) -lft
+# Build rules
 
-$(OBJ):	$(SRC)
-	@$(CC) $(CFLAGS) -c $^ -I$(LIBFT_DIR)
-#	@mv *.o src
+all:			$(NAME)
 
+# Build the executalble
+$(NAME): 		$(OBJ) $(LIBFT)
+				@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+
+# Compile object files from source files
+
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
+				@mkdir -p $(@D)
+				@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+# Clean object files
 clean:
-#	@$(RM) src/*.o
-	@$(RM) *.o
-	@make -s -C $(LIBFT_DIR) clean
+				@$(RM) -r $(OBJ_DIR)
+				@make clean -C ./libft
 
-fclean: clean
-	@$(RM) $(NAME)
-	@make -s -C $(LIBFT_DIR) fclean
+# Clean everything
+fclean:			clean
+				@$(RM) $(NAME)
+				@$(RM) $(LIBFT)
 
-re:	fclean all clean
+# Rebuild everything
+re:				fclean all
 
-.PHONY: all clean fclean re
+# Phony targets represent actions not files
+.PHONY:			all clean fclean re

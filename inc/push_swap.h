@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tszymans <tszymans@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/02 21:59:53 by tszymans         ###   ########.fr       */
+/*   Updated: 2024/09/11 23:46:06 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,13 @@ typedef struct s_stack
 t_node	*init_node(int data);
 t_stack	*init_stack(void);
 t_stack	*init_and_fill(int *split, int size);
-
-// init_utils
 int		*get_and_split(int argc, char **argv, int *size);
 int		*split_arg(char *arg, int *size);
 int		get_ssize(char **ssplit);
 
 //sanity
 int		is_sorted(t_stack *stack);
-int		has_dupl(int *split, int size);
+int		has_dupl(t_stack *stack);
 int		is_empty(t_stack *stack);
 void	free_ssplit(char **ssplit);
 void	free_stack(t_stack *stack);
