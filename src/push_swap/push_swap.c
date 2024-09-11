@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:33:06 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:56:40 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,32 @@ int	main(int argc, char **argv)
 	if (split == NULL)
 		return (1);
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		printf("%d\n", split[i]);
 		i++;
 	}
+
+	// Pseudo code
+
+	// Check if the arguments are sorted
+
+	// If list not sorted
+		// Init stack
+		
+		// If stack len == 2
+			// Swap numbers
+		// Else if stack len == 3
+			// call sort_three algorithm
+		// Else (stack > 3 elements)
+			// call Turk algorithm
+		
+		// Clean the stack
+	// END
+
+	// TODO:
+	// 1. write is_sorted for list (not stack) if sorted: free(split)
+
 
 	// stack_a = init_and_fill(split, size);
 	// if (stack_a == NULL)
