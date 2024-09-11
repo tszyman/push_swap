@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:06:29 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:29:30 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int		*split_arg(char *arg, int *size);
 int		get_ssize(char **ssplit);
 
 //sanity
-int		is_sorted(t_stack *stack);
-int		has_dupl(int *split, int size);
 int		is_empty(t_stack *stack);
 void	free_ssplit(char **ssplit);
 void	free_stack(t_stack *stack);
@@ -61,5 +59,7 @@ t_stack	*init_and_fill(int *split, int size);
 
 //error
 void	throw_error(void);
+int		is_sorted(t_stack *stack);
+int		has_dupl(int *split, int size);
 
 #endif
