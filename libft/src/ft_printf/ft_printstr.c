@@ -6,25 +6,24 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:47:01 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:25:42 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/ft_printf.h"
 
-void	add_back(t_stack *stack, t_node *node)
+int	ft_printstr(char *str)
 {
-	if (stack->head == NULL)
+	int	i;
+
+	i = 0;
+	if (!str)
+		str = "(null)";
+	while (*str)
 	{
-		stack->head = node;
-		stack->tail = node;
+		ft_printchar((int)*str);
+		i++;
+		str++;
 	}
-	else
-	{
-		node->next = NULL;
-		node->prev = stack->tail;
-		stack->tail->next = node;
-		stack->tail = node;
-	}
-	stack->size++;
+	return (i);
 }
