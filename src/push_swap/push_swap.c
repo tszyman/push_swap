@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:49:45 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:18:41 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 		printf("%d\n", split[i]);
 		i++;
 	}
+
 	// stack_a = init_and_fill(split, size);
 	// if (stack_a == NULL)
 	// 	return (free(split), 1);

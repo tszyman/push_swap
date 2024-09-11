@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:56:17 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:00:30 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:19:11 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	has_dupl(int *split, int size)
 		while (j < size)
 		{
 			if (split[i] == split[j])
-				return (1);
+				return (free(split), throw_error(), 1);
 			j++;
 		}
 		i++;
