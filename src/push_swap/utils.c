@@ -6,11 +6,11 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:09:31 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/01 19:15:36 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:33:29 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	is_nbr(char *s)
 {

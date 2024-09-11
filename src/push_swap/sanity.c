@@ -6,11 +6,11 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:56:17 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:30:04 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:33:12 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 void	free_ssplit(char **ssplit)
 {

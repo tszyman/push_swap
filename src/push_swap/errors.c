@@ -6,11 +6,11 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:53 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/11 23:27:34 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:32:52 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 void	throw_error(void)
 {

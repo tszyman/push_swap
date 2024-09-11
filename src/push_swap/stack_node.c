@@ -6,11 +6,11 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:06:54 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/12 00:33:22 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 void	add_back(t_stack *stack, t_node *node)
 {
