@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:29:30 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:16:52 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "../libft/inc/libft.h"
 # include "../libft/inc/ft_printf.h"
 
@@ -59,7 +60,7 @@ t_stack	*init_and_fill(int *split, int size);
 
 //error
 void	throw_error(void);
-int		is_sorted(t_stack *stack);
+int		is_sorted(int *split, int size);
 int		has_dupl(int *split, int size);
 
 #endif

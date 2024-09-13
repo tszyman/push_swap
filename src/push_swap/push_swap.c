@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:56:40 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:38:29 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,20 @@ int	main(int argc, char **argv)
 	split = get_and_split(argc, argv, &size);
 	if (split == NULL)
 		return (1);
+	if (has_dupl(split, size))
+		exit (0);
+	
 	i = 0;
 	while (i < size)
 	{
 		printf("%d\n", split[i]);
 		i++;
 	}
-
+	if (!is_sorted(split, size))
+	{
+		printf("The list is not yet sorted!\n");
+	
 	// Pseudo code
-
-	// Check if the arguments are sorted
-
 	// If list not sorted
 		// Init stack
 		
@@ -48,15 +51,23 @@ int	main(int argc, char **argv)
 		// Clean the stack
 	// END
 
-	// TODO:
-	// 1. write is_sorted for list (not stack) if sorted: free(split)
+	}
+	else 
+	{
+		printf("The list is already sorted!\n");
+	}
 
+	// TODO:
+	// 1 Init stack (stack printing helper function)
+	// 2 Implement atomic functions
+	// 3 Implement stack cleaning
+	// 4 Implement for 2 element stack
+	// 5 implement sort three algorithm
+	// 6 Implement Turk algorithm
 
 	// stack_a = init_and_fill(split, size);
 	// if (stack_a == NULL)
 	// 	return (free(split), 1);
-	// if (has_duplicates(split, size))
-	// 	return (free_stack(stack_a), free(split), put_error(), 1);
 	// free(split);
 	// stack_b = init_stack();
 	// if (stack_b == NULL)

@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:53 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:32:52 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:23:16 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,19 @@ int	has_dupl(int *split, int size)
 	return (0);
 }
 
-int	is_sorted(t_stack *stack)
+int	is_sorted(int *split, int size)
 {
-	t_node	*current;
+	int	amax;
+	int	i;
 
-	if (stack->size <= 1)
-		return (1);
-	current = stack->head;
-	while (current->next != NULL)
+	i = 0;
+	amax = INT_MIN;
+	while (i < size)
 	{
-		if (current->data > current->next->data)
+		if (split[i] < amax)
 			return (0);
-		current = current->next;
+		amax = split[i];
+		i++;
 	}
-	return (1);
+	return (free(split), 1);
 }

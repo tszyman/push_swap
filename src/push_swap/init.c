@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:51:55 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/12 00:32:59 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:22:06 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	*split_arg(char *arg, int *size)
 	i = 0;
 	while (ssplit[i] != NULL)
 	{
-		if (!is_nbr(ssplit[i]) || ft_atol(ssplit[i]) < -2147483648
-			|| ft_atol(ssplit[i]) > 2147483647)
+		if (!is_nbr(ssplit[i]) || ft_atol(ssplit[i]) < INT_MIN
+			|| ft_atol(ssplit[i]) > INT_MAX)
 			return (free(split), free_ssplit(ssplit), throw_error(), NULL);
 		split[i] = ft_atoi(ssplit[i]);
 		i++;
@@ -71,8 +71,8 @@ int	*get_and_split(int argc, char **argv, int *size)
 		i = argc - 1;
 		while (i > 0)
 		{
-			if (!is_nbr(argv[i]) || ft_atol(argv[i]) < -2147483648
-				|| ft_atol(argv[i]) > 2147483647)
+			if (!is_nbr(argv[i]) || ft_atol(argv[i]) < INT_MIN
+				|| ft_atol(argv[i]) > INT_MAX)
 				return (free(split), throw_error(), NULL);
 			split[i - 1] = ft_atoi(argv[i]);
 			i--;
