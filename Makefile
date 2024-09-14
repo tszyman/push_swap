@@ -6,7 +6,7 @@
 #    By: tomek <tomek@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 16:09:49 by tomek             #+#    #+#              #
-#    Updated: 2024/09/11 23:45:44 by tomek            ###   ########.fr        #
+#    Updated: 2024/09/14 19:48:04 by tomek            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ PUSH_SWAP_DIR	= 	$(SRC_DIR)push_swap/push_swap.c \
 					$(SRC_DIR)push_swap/sanity.c \
 					$(SRC_DIR)push_swap/utils.c \
 					$(SRC_DIR)push_swap/stack_node.c \
+					$(SRC_DIR)push_swap/stack_utils.c
 
 # Concatenate all source files
 SRCS 			= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
