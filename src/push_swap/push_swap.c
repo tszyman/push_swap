@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/13 23:38:29 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 00:55:55 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ int	main(int argc, char **argv)
 {
 	int			*split;
 	int			size;
-//	t_stack		*stack_a;
-//	t_stack		*stack_b;
-	int			i;
+	t_node		*stack_a;
 
+	stack_a = NULL;
 	split = get_and_split(argc, argv, &size);
 	if (split == NULL)
 		return (1);
 	if (has_dupl(split, size))
 		exit (0);
-	
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", split[i]);
-		i++;
-	}
 	if (!is_sorted(split, size))
 	{
-		printf("The list is not yet sorted!\n");
+		init_and_fill(&stack_a, split, size);
+		free(split);
+		print_stack(stack_a);
+		if (stack_len(stack_a)==2)
+			printf("algo for 2 will be played\n");
+		else if (stack_len(stack_a)==3)
+			printf("algo for 3 will be played\n");
+		else
+			printf("Turk will be played\n");
 	
 	// Pseudo code
 	// If list not sorted
-		// Init stack
+		// Init stack: create stack and append node
 		
 		// If stack len == 2
 			// Swap numbers
@@ -52,11 +52,8 @@ int	main(int argc, char **argv)
 	// END
 
 	}
-	else 
-	{
-		printf("The list is already sorted!\n");
-	}
-
+	free_stack(&stack_a);
+	return (0);
 	// TODO:
 	// 1 Init stack (stack printing helper function)
 	// 2 Implement atomic functions
@@ -64,12 +61,4 @@ int	main(int argc, char **argv)
 	// 4 Implement for 2 element stack
 	// 5 implement sort three algorithm
 	// 6 Implement Turk algorithm
-
-	// stack_a = init_and_fill(split, size);
-	// if (stack_a == NULL)
-	// 	return (free(split), 1);
-	// free(split);
-	// stack_b = init_stack();
-	// if (stack_b == NULL)
-	// 	return (free_stack(stack_a), 1);
 }

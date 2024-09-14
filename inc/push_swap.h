@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/13 23:16:52 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 00:48:15 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,27 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-typedef struct s_stack
-{
-	int				size;
-	struct s_node	*head;
-	struct s_node	*tail;
-}	t_stack;
-
 // init
 int		*get_and_split(int argc, char **argv, int *size);
-int		*split_arg(char *arg, int *size);
-int		get_ssize(char **ssplit);
+//int		*split_arg(char *arg, int *size);
+//int		get_ssize(char **ssplit);
 
 //sanity
-int		is_empty(t_stack *stack);
+int		is_empty(t_node *stack);
 void	free_ssplit(char **ssplit);
-void	free_stack(t_stack *stack);
+void	free_stack(t_node **stack);
 
 //utils
 int		is_nbr(char *s);
 long	ft_atol(char *s);
 
 //stack&node
-void	add_back(t_stack *stack, t_node *node);
-t_node	*init_node(int data);
-t_stack	*init_stack(void);
-t_stack	*init_and_fill(int *split, int size);
+void	init_and_fill(t_node **stack_a, int *split, int size);
+void	append_node(t_node **stack, int n);
+
+//stack utils
+t_node	*find_last(t_node *stack);
+int		stack_len(t_node *stack);
 
 //actions
 
@@ -62,5 +57,8 @@ t_stack	*init_and_fill(int *split, int size);
 void	throw_error(void);
 int		is_sorted(int *split, int size);
 int		has_dupl(int *split, int size);
+
+//helper - to be removed
+void	print_stack(t_node	*stack);
 
 #endif
