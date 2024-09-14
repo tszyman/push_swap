@@ -6,13 +6,13 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:51:55 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/13 23:22:06 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/14 18:47:28 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int	get_ssize(char **ssplit)
+static int	get_ssize(char **ssplit)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	get_ssize(char **ssplit)
 	return (count);
 }
 
-int	*split_arg(char *arg, int *size)
+static int	*split_arg(char *arg, int *size)
 {
 	char	**ssplit;
 	int		*split;
