@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 00:01:18 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 00:05:50 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static void	push(t_node **dst, t_node **src)
 
 void	pa(t_node **stack_a, t_node **stack_b, bool print)
 {
-	push(a, b);
+	push(stack_a, stack_b);
 	if(print)
 		ft_print("pa\n");
 }
 
 void	pb(t_node **stack_b, t_node **stack_a, bool print)
 {
-	push(b, a);
+	push(stack_b, stack_a);
 	if(print)
 		ft_print("pb\n");
 }
