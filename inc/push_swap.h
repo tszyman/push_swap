@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 23:28:08 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 00:02:35 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ typedef struct s_node
 
 // init
 int		*get_and_split(int argc, char **argv, int *size);
-//int		*split_arg(char *arg, int *size);
-//int		get_ssize(char **ssplit);
 
 //sanity
-int		is_empty(t_node *stack);
 void	free_ssplit(char **ssplit);
 void	free_stack(t_node **stack);
 
@@ -53,15 +50,22 @@ t_node	*find_last(t_node *stack);
 t_node	*find_max(t_node *stack);
 
 //actions
+//		swap
 void	sa(t_node **stack_a, bool print);
 void	sb(t_node **stack_b, bool print);
 void	ss(t_node **stack_a, t_node **stack_b, bool print);
+//		rotate
 void	ra(t_node **stack_a, bool print);
 void	rb(t_node **stack_b, bool print);
 void	rr(t_node **stack_a, t_node **stack_b, bool print);
+//		rev rotate
 void	rra(t_node **stack_a, bool print);
 void	rrb(t_node **stack_b, bool print);
 void	rrr(t_node **stack_a, t_node **stack_b, bool print);
+//		push
+void	pa(t_node **stack_a, t_node **stack_b, bool print);
+void	pb(t_node **stack_b, t_node **stack_a, bool print);
+//		algorithms
 void	sort_three(t_node **stack_a);
 
 //sort
