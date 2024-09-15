@@ -6,7 +6,7 @@
 #    By: tomek <tomek@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 16:09:49 by tomek             #+#    #+#              #
-#    Updated: 2024/09/16 00:24:44 by tomek            ###   ########.fr        #
+#    Updated: 2024/09/16 00:52:30 by tomek            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ COMMANDS_DIR	=	$(SRC_DIR)actions/swap.c \
 					$(SRC_DIR)actions/rev_rotate.c \
 					$(SRC_DIR)actions/push.c \
 					$(SRC_DIR)actions/sort_three.c \
-					$(SRC_DIR)actions/sort_stacks_Turk.c 
+					$(SRC_DIR)actions/sort_stacks_turk.c 
 
 PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap/push_swap.c \
 					$(SRC_DIR)push_swap/errors.c \
