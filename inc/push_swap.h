@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 00:48:15 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 20:58:21 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	append_node(t_node **stack, int n);
 //stack utils
 t_node	*find_last(t_node *stack);
 int		stack_len(t_node *stack);
+int		stack_sorted(t_node *stack);
 
 //actions
 

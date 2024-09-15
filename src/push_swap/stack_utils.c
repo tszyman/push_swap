@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:36:22 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 00:48:04 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 20:57:58 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ int	stack_len(t_node *stack)
 		len++;
 	}
 	return (len);
+}
+
+int	stack_sorted(t_node *stack)
+{
+	if(!stack)
+		return (0);
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
 void	print_stack(t_node	*stack)
