@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 22:27:12 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 23:32:50 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	swap(t_node **head)
 {
 	if (!*head || !(*head)->next)
-		return (0);
+		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
 	(*head)->prev->next = (*head)->next;
