@@ -6,7 +6,7 @@
 #    By: tomek <tomek@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 16:09:49 by tomek             #+#    #+#              #
-#    Updated: 2024/09/15 21:01:45 by tomek            ###   ########.fr        #
+#    Updated: 2024/09/15 23:13:56 by tomek            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ CFLAGS			= -Wall -Wextra -Werror -I
 RM				= rm -rf
 
 # Source files
-COMMANDS_DIR	=	$(SRC_DIR)actions/swap.c 
+COMMANDS_DIR	=	$(SRC_DIR)actions/swap.c \
+					$(SRC_DIR)actions/rotate.c \
+					$(SRC_DIR)actions/sort_three.c 
 
 PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap/push_swap.c \
 					$(SRC_DIR)push_swap/errors.c \

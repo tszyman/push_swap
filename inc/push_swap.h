@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 22:27:59 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 23:13:28 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,19 @@ void	init_and_fill(t_node **stack_a, int *split, int size);
 void	append_node(t_node **stack, int n);
 
 //stack utils
-t_node	*find_last(t_node *stack);
 int		stack_len(t_node *stack);
 int		stack_sorted(t_node *stack);
+t_node	*find_last(t_node *stack);
+t_node	*find_max(t_node *stack);
 
 //actions
 void	sa(t_node **stack_a, bool print);
 void	sb(t_node **stack_b, bool print);
-void	ss(t_node **stack_a, t_node **stack_b,bool print);
+void	ss(t_node **stack_a, t_node **stack_b, bool print);
+void	ra(t_node **stack_a, bool print);
+void	rb(t_node **stack_b, bool print);
+void	rr(t_node **stack_a, t_node **stack_b, bool print);
+void	sort_three(t_node **stack_a);
 
 //sort
 
