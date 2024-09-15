@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:36:22 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 22:44:22 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 01:18:50 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ t_node	*find_max(t_node *stack)
 		stack = stack->next;
 	}
 	return (max_node);
+}
+
+t_node	*get_cheapest(t_node *stack)
+{
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		if (stack->cheaepest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
 
 void	print_stack(t_node	*stack)
