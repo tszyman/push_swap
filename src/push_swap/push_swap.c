@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 23:31:48 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 00:32:57 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	main(int argc, char **argv)
 	int			*split;
 	int			size;
 	t_node		*stack_a;
+	t_node		*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	split = get_and_split(argc, argv, &size);
 	if (split == NULL)
 		return (1);
@@ -29,36 +31,14 @@ int	main(int argc, char **argv)
 	{
 		init_and_fill(&stack_a, split, size);
 		free(split);
-		print_stack(stack_a);
+		print_stack(stack_a);						// do wyrzucenia przy czyszczeniu!!!
 		if (stack_len(stack_a) == 2)
 			sa(&stack_a, true);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
 		else
-			printf("Turk will be played\n");
-	
-	// Pseudo code
-	// If list not sorted
-		// Init stack: create stack and append node
-		
-		// If stack len == 2
-			// Swap numbers
-		// Else if stack len == 3
-			// call sort_three algorithm
-		// Else (stack > 3 elements)
-			// call Turk algorithm
-		
-		// Clean the stack
-	// END
-
+			sort_stacks_Turk(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
 	return (0);
-	// TODO:
-	// 1 Init stack (stack printing helper function)
-	// 2 Implement atomic functions
-	// 3 Implement stack cleaning
-	// 4 Implement for 2 element stack
-	// 5 implement sort three algorithm
-	// 6 Implement Turk algorithm
 }
