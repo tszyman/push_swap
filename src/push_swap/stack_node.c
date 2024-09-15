@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 00:16:01 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 01:25:07 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,14 @@ void	init_and_fill(t_node **stack_a, int *split, int size)
 	{
 		append_node(stack_a, split[i]);
 		i++;
+	}
+}
+
+void	print_stack(t_node	*stack)
+{
+	while (stack != NULL)
+	{
+		printf("%d\n", stack->data);
+		stack = stack->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:36:22 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 01:18:50 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 01:25:09 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,9 @@ t_node	*get_cheapest(t_node *stack)
 		return ;
 	while (stack)
 	{
-		if (stack->cheaepest)
+		if (stack->cheapest)
 			return (stack);
 		stack = stack->next;
 	}
 	return (NULL);
-}
-
-void	print_stack(t_node	*stack)
-{
-	while (stack != NULL)
-	{
-		printf("%d\n", stack->data);
-		stack = stack->next;
-	}
 }
