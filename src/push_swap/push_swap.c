@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 00:55:55 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 22:28:41 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(int argc, char **argv)
 		init_and_fill(&stack_a, split, size);
 		free(split);
 		print_stack(stack_a);
-		if (stack_len(stack_a)==2)
-			printf("algo for 2 will be played\n");
-		else if (stack_len(stack_a)==3)
+		if (stack_len(stack_a) == 2)
+			sa(stack_a, true);
+		else if (stack_len(stack_a) == 3)
 			printf("algo for 3 will be played\n");
 		else
 			printf("Turk will be played\n");
