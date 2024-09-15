@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 23:13:28 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/15 23:28:08 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void	ss(t_node **stack_a, t_node **stack_b, bool print);
 void	ra(t_node **stack_a, bool print);
 void	rb(t_node **stack_b, bool print);
 void	rr(t_node **stack_a, t_node **stack_b, bool print);
+void	rra(t_node **stack_a, bool print);
+void	rrb(t_node **stack_b, bool print);
+void	rrr(t_node **stack_a, t_node **stack_b, bool print);
 void	sort_three(t_node **stack_a);
 
 //sort
