@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 00:27:56 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 00:34:51 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_node	*find_max(t_node *stack);
 
 //prep_nodes
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b);
-void	current_index(t_node **stack);
+void	current_index(t_node *stack);
 
 //actions
 //		swap
