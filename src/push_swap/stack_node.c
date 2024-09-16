@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:35:13 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:03:36 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	set_cheapest(t_node *stack)
 t_node	*get_cheapest(t_node *stack)
 {
 	if (!stack)
-		return ;
+		return (NULL);
 	while (stack)
 	{
 		if (stack->cheapest)
