@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 01:19:21 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 21:34:49 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,22 @@ long	ft_atol(char *s);
 //stack&node
 void	init_and_fill(t_node **stack_a, int *split, int size);
 void	append_node(t_node **stack, int n);
+void	update_index(t_node *stack);
+void	set_cheapest(t_node *stack);
+t_node	*get_cheapest(t_node *stack);
 
 //stack utils
 int		stack_len(t_node *stack);
 int		stack_sorted(t_node *stack);
 t_node	*find_last(t_node *stack);
 t_node	*find_max(t_node *stack);
-t_node	*get_cheapest(t_node *stack);
+t_node	*find_max(t_node *stack);
 
-//prep_nodes
+//prep_nodes_a
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b);
-void	current_index(t_node *stack);
-void	set_cheapest(t_node *stack);
+
+//prep_nodes_b
+void	prep_nodes_b(t_node *stack_a, t_node *stack_b);
 
 //actions
 //		swap

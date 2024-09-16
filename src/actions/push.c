@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 00:06:28 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 21:13:47 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,25 @@ void	pb(t_node **stack_b, t_node **stack_a, bool print)
 	push(stack_b, stack_a);
 	if(print)
 		ft_print("pb\n");
+}
+
+void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'stack_a')
+		{
+			if (top_node->above_median)
+				ra(stack, true);
+			else
+				rra(stack, true);
+		}
+		else if (stack_name == 'stack_b')
+		{
+			if (top_node->above_median)
+				rb(stack, true);
+			else
+				rrb(stack, true);
+		}
+	}
 }

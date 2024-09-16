@@ -6,32 +6,11 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:21:14 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 01:09:19 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 21:27:34 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-void	current_index(t_node *stack)
-{
-	int	i;
-	int	median;
-
-	i = 0;
-	if(!stack)
-		return ;
-	median = stack_len(stack) / 2;
-	while (stack)
-	{
-		stack->index = i;
-		if (i <= median)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
-		stack = stack->next;
-		++i;
-	}
-}
 
 static void	set_target_a(t_node *stack_a, t_node *stack_b)
 {
@@ -79,30 +58,10 @@ static void	cost_analysis_a(t_node *stack_a, t_node *stack_b)
 	}
 }
 
-void	set_cheapest(t_node *stack)
-{
-	long	cheapest_val;
-	t_node	*cheapest_node;
-	
-	if (!stack)
-		return ;
-	cheapest_val = LONG_MAX;
-	while (stack)
-	{
-		if (stack->push_cost < cheapest_val)
-		{
-			cheapest_val = stack->push_cost;
-			cheapest_node = stack;
-		}
-		stack = stack->next;
-	}
-	cheapest_node->cheapest = true;
-}
-
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b)
 {
-	current_index(stack_a);
-	current_index(stack_b);
+	update_index(stack_a);
+	update_index(stack_b);
 	set_target_a(stack_a, stack_b);
 	cost_analysis_a(stack_a, stack_b);
 	set_cheapest(stack_a);
