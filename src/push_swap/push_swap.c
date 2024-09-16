@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:02:11 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 00:32:57 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:02:40 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
 		else
-			sort_stacks_Turk(&stack_a, &stack_b);
+			sort_stacks_turk(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
 	return (0);

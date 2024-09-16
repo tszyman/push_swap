@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:34:49 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:02:24 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		stack_len(t_node *stack);
 int		stack_sorted(t_node *stack);
 t_node	*find_last(t_node *stack);
 t_node	*find_max(t_node *stack);
-t_node	*find_max(t_node *stack);
+t_node	*find_min(t_node *stack);
 
 //prep_nodes_a
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b);
@@ -79,6 +79,8 @@ void	rrr(t_node **stack_a, t_node **stack_b, bool print);
 //		push
 void	pa(t_node **stack_a, t_node **stack_b, bool print);
 void	pb(t_node **stack_b, t_node **stack_a, bool print);
+void	prep_for_push_a(t_node **stack, t_node *top_node);
+void	prep_for_push_b(t_node **stack, t_node *top_node);
 //		algorithms
 void	sort_three(t_node **stack_a);
 void	sort_stacks_turk(t_node **stack_a, t_node **stack_b);

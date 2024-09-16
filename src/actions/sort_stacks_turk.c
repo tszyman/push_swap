@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:12:34 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:46:00 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:00:02 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ static void	move_a_to_b(t_node **stack_a, t_node **stack_b)
 		rotate_both(stack_a, stack_b, cheapest_node);
 	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
 		rev_rotate_both(stack_a, stack_b, cheapest_node);
-	prep_for_push(stack_a, cheapest_node, 'stack_a');
-	prep_for_push(stack_b, cheapest_node->target, 'stack_b');
+	prep_for_push_a(stack_a, cheapest_node);
+	prep_for_push_b(stack_b, cheapest_node->target);
 	pb(stack_b, stack_a, true);
 }
 
 static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
 {
-	prep_for_push(stack_a, (*stack_b)->target, 'stack_a');
+	prep_for_push_a(stack_a, (*stack_b)->target);
 	pa(stack_a, stack_b, true);
 }
 
 static void	min_on_top(t_node **stack_a)
 {
-	while ((*stack_a)->data != find_min(*stack_a)->data)
+	while ((*stack_a)->data != (find_min(*stack_a))->data)
 	{
-		if (find_min(*stack_a)->above_median)
+		if ((find_min(*stack_a))->above_median)
 			ra(stack_a, true);
 		else
 			rra(stack_a, true);

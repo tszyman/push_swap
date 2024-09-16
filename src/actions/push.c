@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:13:47 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 21:56:53 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,33 +40,34 @@ void	pa(t_node **stack_a, t_node **stack_b, bool print)
 {
 	push(stack_a, stack_b);
 	if(print)
-		ft_print("pa\n");
+		ft_printf("pa\n");
 }
 
 void	pb(t_node **stack_b, t_node **stack_a, bool print)
 {
 	push(stack_b, stack_a);
 	if(print)
-		ft_print("pb\n");
+		ft_printf("pb\n");
 }
 
-void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
+void	prep_for_push_a(t_node **stack, t_node *top_node)
 {
 	while (*stack != top_node)
 	{
-		if (stack_name == 'stack_a')
-		{
-			if (top_node->above_median)
-				ra(stack, true);
-			else
-				rra(stack, true);
-		}
-		else if (stack_name == 'stack_b')
-		{
-			if (top_node->above_median)
-				rb(stack, true);
-			else
-				rrb(stack, true);
-		}
+		if (top_node->above_median)
+			ra(stack, true);
+		else
+			rra(stack, true);
+	}
+}
+
+void	prep_for_push_b(t_node **stack, t_node *top_node)
+{
+	while (*stack != top_node)
+	{
+		if (top_node->above_median)
+			rb(stack, true);
+		else
+			rrb(stack, true);
 	}
 }
