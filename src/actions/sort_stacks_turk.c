@@ -6,23 +6,23 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:12:34 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 22:00:02 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:10:17 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest_node)
+static void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
 {
-	while (*stack_b != cheapest_node->target && *stack_a != cheapest_node)
+	while (*stack_b != cheapest->target && *stack_a != cheapest)
 		rr(stack_a, stack_b, true);
 	update_index(*stack_a);
 	update_index(*stack_b);
 }
 
-static void	rev_rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest_node)
+static void	rev_rot_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
 {
-	while (*stack_b != cheapest_node->target && *stack_a != cheapest_node)
+	while (*stack_b != cheapest->target && *stack_a != cheapest)
 		rrr(stack_a, stack_b, true);
 	update_index(*stack_a);
 	update_index(*stack_b);
@@ -30,15 +30,15 @@ static void	rev_rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest
 
 static void	move_a_to_b(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*cheapest_node;
+	t_node	*cheapest;
 
-	cheapest_node = get_cheapest(*stack_a);
-	if (cheapest_node->above_median && cheapest_node->target->above_median)
-		rotate_both(stack_a, stack_b, cheapest_node);
-	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
-		rev_rotate_both(stack_a, stack_b, cheapest_node);
-	prep_for_push_a(stack_a, cheapest_node);
-	prep_for_push_b(stack_b, cheapest_node->target);
+	cheapest = get_cheapest(*stack_a);
+	if (cheapest->above_median && cheapest->target->above_median)
+		rotate_both(stack_a, stack_b, cheapest);
+	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
+		rev_rot_both(stack_a, stack_b, cheapest);
+	prep_for_push_a(stack_a, cheapest);
+	prep_for_push_b(stack_b, cheapest->target);
 	pb(stack_b, stack_a, true);
 }
 
@@ -50,9 +50,9 @@ static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
 
 static void	min_on_top(t_node **stack_a)
 {
-	while ((*stack_a)->data != (find_min(*stack_a))->data)
+	while ((*stack_a)->data != find_min(*stack_a)->data)
 	{
-		if ((find_min(*stack_a))->above_median)
+		if (find_min(*stack_a)->above_median)
 			ra(stack_a, true);
 		else
 			rra(stack_a, true);
