@@ -6,13 +6,13 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:12:34 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 22:10:17 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:18:18 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
+void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
 {
 	while (*stack_b != cheapest->target && *stack_a != cheapest)
 		rr(stack_a, stack_b, true);
@@ -20,32 +20,12 @@ static void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
 	update_index(*stack_b);
 }
 
-static void	rev_rot_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
+void	rev_rot_both(t_node **stack_a, t_node **stack_b, t_node *cheapest)
 {
 	while (*stack_b != cheapest->target && *stack_a != cheapest)
 		rrr(stack_a, stack_b, true);
 	update_index(*stack_a);
 	update_index(*stack_b);
-}
-
-static void	move_a_to_b(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*cheapest;
-
-	cheapest = get_cheapest(*stack_a);
-	if (cheapest->above_median && cheapest->target->above_median)
-		rotate_both(stack_a, stack_b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
-		rev_rot_both(stack_a, stack_b, cheapest);
-	prep_for_push_a(stack_a, cheapest);
-	prep_for_push_b(stack_b, cheapest->target);
-	pb(stack_b, stack_a, true);
-}
-
-static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
-{
-	prep_for_push_a(stack_a, (*stack_b)->target);
-	pa(stack_a, stack_b, true);
 }
 
 static void	min_on_top(t_node **stack_a)

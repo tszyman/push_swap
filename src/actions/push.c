@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:56:53 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:06:04 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 static void	push(t_node **dst, t_node **src)
 {
 	t_node	*push_node;
-	
-	if(!src)
+
+	if (!src)
 		return ;
 	push_node = *src;
 	*src = (*src)->next;
-	if(*src)
+	if (*src)
 		(*src)->prev = NULL;
 	push_node->prev = NULL;
 	if (!*dst)
@@ -39,14 +39,14 @@ static void	push(t_node **dst, t_node **src)
 void	pa(t_node **stack_a, t_node **stack_b, bool print)
 {
 	push(stack_a, stack_b);
-	if(print)
+	if (print)
 		ft_printf("pa\n");
 }
 
 void	pb(t_node **stack_b, t_node **stack_a, bool print)
 {
 	push(stack_b, stack_a);
-	if(print)
+	if (print)
 		ft_printf("pb\n");
 }
 

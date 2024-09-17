@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:53 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/13 23:23:16 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:14:31 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,13 @@ int	is_sorted(int *split, int size)
 		i++;
 	}
 	return (free(split), 1);
+}
+
+void	print_stack(t_node	*stack)
+{
+	while (stack != NULL)
+	{
+		ft_printf("%d\n", stack->data);
+		stack = stack->next;
+	}
 }

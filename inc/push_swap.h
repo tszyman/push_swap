@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:09:32 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 22:12:25 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:18:52 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ t_node	*find_min(t_node *stack);
 
 //prep_nodes_a
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b);
+void	move_a_to_b(t_node **stack_a, t_node **stack_b);
 
 //prep_nodes_b
 void	prep_nodes_b(t_node *stack_a, t_node *stack_b);
+void	move_b_to_a(t_node **stack_a, t_node **stack_b);
 
 //actions
 //		swap
@@ -81,15 +83,17 @@ void	pa(t_node **stack_a, t_node **stack_b, bool print);
 void	pb(t_node **stack_b, t_node **stack_a, bool print);
 void	prep_for_push_a(t_node **stack, t_node *top_node);
 void	prep_for_push_b(t_node **stack, t_node *top_node);
+
 //		algorithms
 void	sort_three(t_node **stack_a);
 void	sort_stacks_turk(t_node **stack_a, t_node **stack_b);
+void	rev_rot_both(t_node **stack_a, t_node **stack_b, t_node *cheapest);
+void	rotate_both(t_node **stack_a, t_node **stack_b, t_node *cheapest);
 
 //error
 void	throw_error(void);
 int		is_sorted(int *split, int size);
 int		has_dupl(int *split, int size);
-
 //helper - to be removed
 void	print_stack(t_node	*stack);
 

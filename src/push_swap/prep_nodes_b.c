@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:21:14 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:46:26 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:12:55 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	set_target_b(t_node *stack_a, t_node *stack_b)
 	t_node	*curr_a;
 	t_node	*target;
 	long	close_big_nbr;
-	
+
 	while (stack_b)
 	{
 		close_big_nbr = LONG_MAX;
@@ -35,8 +35,14 @@ static void	set_target_b(t_node *stack_a, t_node *stack_b)
 			stack_b->target = find_min(stack_a);
 		else
 			stack_b->target = target;
-	stack_b = stack_b->next;
+		stack_b = stack_b->next;
 	}
+}
+
+void	move_b_to_a(t_node **stack_a, t_node **stack_b)
+{
+	prep_for_push_a(stack_a, (*stack_b)->target);
+	pa(stack_a, stack_b, true);
 }
 
 void	prep_nodes_b(t_node *stack_a, t_node *stack_b)

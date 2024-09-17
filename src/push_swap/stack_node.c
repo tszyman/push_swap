@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:30:00 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 22:03:36 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:13:41 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	append_node(t_node **stack, int n)
 void	init_and_fill(t_node **stack_a, int *split, int size)
 {
 	int		i;
-	
+
 	i = 0;
 	while (i < size)
 	{
@@ -55,7 +55,7 @@ void	update_index(t_node *stack)
 	int	median;
 
 	i = 0;
-	if(!stack)
+	if (!stack)
 		return ;
 	median = stack_len(stack) / 2;
 	while (stack)
@@ -74,7 +74,7 @@ void	set_cheapest(t_node *stack)
 {
 	long	cheapest_val;
 	t_node	*cheapest_node;
-	
+
 	if (!stack)
 		return ;
 	cheapest_val = LONG_MAX;
@@ -101,13 +101,4 @@ t_node	*get_cheapest(t_node *stack)
 		stack = stack->next;
 	}
 	return (NULL);
-}
-
-void	print_stack(t_node	*stack)
-{
-	while (stack != NULL)
-	{
-		printf("%d\n", stack->data);
-		stack = stack->next;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:00:27 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/15 23:34:06 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:06:59 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	rev_rotate(t_node **stack)
 {
 	t_node	*last_node;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	last_node = find_last(*stack);

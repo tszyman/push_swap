@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 00:21:14 by tomek             #+#    #+#             */
-/*   Updated: 2024/09/16 21:27:34 by tomek            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:11:11 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,20 @@ static void	cost_analysis_a(t_node *stack_a, t_node *stack_b)
 			stack_a->push_cost += len_b - (stack_a->target->index);
 		stack_a = stack_a->next;
 	}
+}
+
+void	move_a_to_b(t_node **stack_a, t_node **stack_b)
+{
+	t_node	*cheapest;
+
+	cheapest = get_cheapest(*stack_a);
+	if (cheapest->above_median && cheapest->target->above_median)
+		rotate_both(stack_a, stack_b, cheapest);
+	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
+		rev_rot_both(stack_a, stack_b, cheapest);
+	prep_for_push_a(stack_a, cheapest);
+	prep_for_push_b(stack_b, cheapest->target);
+	pb(stack_b, stack_a, true);
 }
 
 void	prep_nodes_a(t_node *stack_a, t_node *stack_b)
